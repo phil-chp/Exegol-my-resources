@@ -15,8 +15,7 @@ alias winrmexec.py="$TOOLS_DIR/winrmexec/venv/bin/python3 $TOOLS_DIR/winrmexec/w
 alias winrmexec="grc winrmexec.py"
 
 # dnscat2
-alias dnscat2="(cd $TOOLS_DIR/dnscat2/server && bundle exec ruby ./dnscat2.rb)"
-
+alias dnscat2='BUNDLE_GEMFILE=/opt/my-resources/tools/dnscat2/server/Gemfile rvm default@dnscat2 do bundle exec ruby /opt/my-resources/tools/dnscat2/server/dnscat2.rb'
 # ReconSpider
 alias ReconSpider="$TOOLS_DIR/ReconSpider/venv/bin/python3 $TOOLS_DIR/ReconSpider/ReconSpider.py"
 

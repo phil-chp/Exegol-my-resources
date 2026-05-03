@@ -11,4 +11,4 @@ alias msf-virustotal="BUNDLE_GEMFILE=/opt/tools/metasploit-framework/Gemfile /us
 
 export PATH="/opt/my-resources/bin:$PATH"
 
-cat "/opt/my-resources/setup_benchmark.log" | grep -v "0s$"
+# cat "/opt/my-resources/setup_benchmark.log" | grep -v " 0s$"

@@ -5,7 +5,7 @@
 [submodule "tools/dnscat2"]
 	path = tools/dnscat2
 	url = https://github.com/iagox86/dnscat2
-	ignore = untracked
+	ignore = dirty
 [submodule "tools/wpprobe"]
 	path = tools/wpprobe
 	url = https://github.com/Chocapikk/wpprobe
@@ -29,11 +29,7 @@
 [submodule "tools/rcat"]
 	path = tools/rcat
 	url = https://github.com/xct/rcat
-[submodule "windows/rcat"]
 	ignore = untracked
-[submodule "setup/tools/ptunnel-ng"]
-	path = setup/tools/ptunnel-ng
-	url = https://github.com/lnslbrty/ptunnel-ng
 [submodule "tools/ptunnel-ng"]
 	path = tools/ptunnel-ng
 	url = https://github.com/lnslbrty/ptunnel-ng
