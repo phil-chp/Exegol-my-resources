@@ -1,0 +1,32 @@
+{
+  "plugins": {
+    "copilot.vim": {
+      "rev": "f3d66c148aa60ad04c0a21d3e0a776459de09eb2",
+      "src": "https://github.com/github/copilot.vim"
+    },
+    "gruvbox.nvim": {
+      "rev": "a56f758f9d3eed0b8afbab6ea3ee523887755aed",
+      "src": "https://github.com/ellisonleao/gruvbox.nvim"
+    },
+    "mason.nvim": {
+      "rev": "7dc4facca9702f95353d5a1f87daf23d78e31c2a",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "mini.pick": {
+      "rev": "be6490ae9d7038b9f5185d95a8060054f9b23666",
+      "src": "https://github.com/echasnovski/mini.pick"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba918343ebfd5565147a42a26580579482",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "oil.nvim": {
+      "rev": "07f80ad645895af849a597d1cac897059d89b686",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "typst-preview.nvim": {
+      "rev": "dea4525d5420b7c32eebda7de15a6beb9d6574fa",
+      "src": "https://github.com/chomosuke/typst-preview.nvim"
+    }
+  }
+}

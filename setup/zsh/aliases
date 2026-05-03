@@ -1,0 +1,48 @@
+# Config file dedicated to the user's personal aliases shared between all exegol containers
+alias c="printf '\e[2J\e[3J\e[H'"
+alias nvim="/opt/my-resources/bin/nvim"
+alias vi="nvim"
+
+# =========================================
+# Custom Tools
+
+TOOLS_DIR="/opt/my-resources/tools"
+
+# winrmexec
+alias evil_winrmexec.py="$TOOLS_DIR/winrmexec/venv/bin/python3 $TOOLS_DIR/winrmexec/evil_winrmexec.py"
+alias evil-winrmexec="grc evil_winrmexec.py"
+alias winrmexec.py="$TOOLS_DIR/winrmexec/venv/bin/python3 $TOOLS_DIR/winrmexec/winrmexec.py"
+alias winrmexec="grc winrmexec.py"
+
+# dnscat2
+alias dnscat2="(cd $TOOLS_DIR/dnscat2/server && bundle exec ruby ./dnscat2.rb)"
+
+# ReconSpider
+alias ReconSpider="$TOOLS_DIR/ReconSpider/venv/bin/python3 $TOOLS_DIR/ReconSpider/ReconSpider.py"
+
+# JoomlaScan
+alias joomscan="echo 'Consider using JoomlaScan instead. Call /opt/tools/joomscan/joomscan.pl if you don'\''t care'"
+alias JoomlaScan="$TOOLS_DIR/JoomlaScan/venv/bin/python $TOOLS_DIR/JoomlaScan/joomlascan.py"
+
+# Flask-Unsign
+alias flask-unsign="$TOOLS_DIR/Flask-Unsign/venv/bin/flask-unsign"
+
+# subbrute
+alias subbrute="python3 $TOOLS_DIR/subbrute/subbrute.py"
+
+# Random tools (no deps)
+alias firefox_cookie_extractor.py="python3 $TOOLS_DIR/firefox_cookie_extractor.py"
+alias firefox_decrypt.py="python3 $TOOLS_DIR/firefox_decrypt.py"
+alias gen_wordlist.py="python3 $TOOLS_DIR/gen_wordlist.py"
+alias joomla-brute.py="python3 $TOOLS_DIR/joomla-brute.py"
+alias mremoteng_decrypt.py="python3 $TOOLS_DIR/mremoteng_decrypt.py"
+alias objectSIDtostr.py="python3 $TOOLS_DIR/objectSIDtostr.py"
+alias aescrypt2hashcat.pl="perl $TOOLS_DIR/aescrypt2hashcat.pl"
+alias addusertogroup.py="python3 $TOOLS_DIR/addusertogroup.py"
+alias XXEinjector.rb="ruby $TOOLS_DIR/XXEinjector.rb"
+alias rs256-to-hs256="$TOOLS_DIR/rs256-to-hs256.sh"
+alias extract_email_from_pgp="python3 $TOOLS_DIR/extract_email_from_pgp.py"
+alias iis-shortname-scanner="$TOOLS_DIR/iis_shortname_scanner.sh"
+# =========================================
+
+

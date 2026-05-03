@@ -1,0 +1,51 @@
+[submodule "tools/winrmexec"]
+	path = tools/winrmexec
+	url = https://github.com/ozelis/winrmexec
+	ignore = untracked
+[submodule "tools/dnscat2"]
+	path = tools/dnscat2
+	url = https://github.com/iagox86/dnscat2
+	ignore = untracked
+[submodule "tools/wpprobe"]
+	path = tools/wpprobe
+	url = https://github.com/Chocapikk/wpprobe
+	ignore = untracked
+[submodule "tools/Flask-Unsign"]
+	path = tools/Flask-Unsign
+	url = https://github.com/Paradoxis/Flask-Unsign
+	ignore = untracked
+[submodule "tools/Flask-Unsign-Wordlist"]
+	path = tools/Flask-Unsign-Wordlist
+	url = https://github.com/Paradoxis/Flask-Unsign-Wordlist
+	ignore = untracked
+[submodule "tools/JoomlaScan"]
+	path = tools/JoomlaScan
+	url = https://github.com/drego85/JoomlaScan
+	ignore = dirty
+[submodule "tools/subbrute"]
+	path = tools/subbrute
+	url = https://github.com/therook/subbrute
+	ignore = untracked
+[submodule "tools/rcat"]
+	path = tools/rcat
+	url = https://github.com/xct/rcat
+[submodule "windows/rcat"]
+	ignore = untracked
+[submodule "setup/tools/ptunnel-ng"]
+	path = setup/tools/ptunnel-ng
+	url = https://github.com/lnslbrty/ptunnel-ng
+[submodule "tools/ptunnel-ng"]
+	path = tools/ptunnel-ng
+	url = https://github.com/lnslbrty/ptunnel-ng
+	ignore = untracked
+[submodule "linux/rpivot"]
+	path = linux/rpivot
+	url = https://github.com/artkond/rpivot
+	ignore = untracked
+[submodule "tools/chisel"]
+	path = tools/chisel
+	url = https://github.com/jpillora/chisel
+	ignore = untracked
+[submodule "tools/IIS-ShortName-Scanner"]
+	path = tools/IIS-ShortName-Scanner
+	url = https://github.com/irsdl/IIS-ShortName-Scanner

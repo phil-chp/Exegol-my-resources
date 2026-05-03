@@ -1,0 +1,14 @@
+# Config file dedicated to the user's personal zshrc profile shared between all exegol containers.
+# This file is sourced in /root/.zshrc file.
+# Alternatively, the /opt/my-resources/setup/load_user_setup.sh file can be used to operate the change once (instead of sourcing a file for each zsh instance)
+expand_alias(){
+    LBUFFER=$(/opt/my-resources/tools/expand-alias/expand-alias "$BUFFER")
+}
+zle -N expand_alias
+bindkey '^\' expand_alias
+
+alias msf-virustotal="BUNDLE_GEMFILE=/opt/tools/metasploit-framework/Gemfile /usr/local/rvm/gems/ruby-3.1.5@metasploit-framework/wrappers/bundle exec /opt/tools/metasploit-framework/tools/exploit/virustotal.rb"
+
+export PATH="/opt/my-resources/bin:$PATH"
+
+cat "/opt/my-resources/setup_benchmark.log" | grep -v "0s$"

