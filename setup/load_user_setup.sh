@@ -241,9 +241,9 @@ function add_evtx_dump() {
 
     cd "$BLUE_DIR"
     if [ "$ARCH" = "aarch64" ]; then
-        wget -O "evtx_dump" "https://github.com/omerbenamram/evtx/releases/download/latest/evtx_dump-v0.11.2-aarch64-unknown-linux-gnu"
+        wget -O "evtx_dump" "https://github.com/omerbenamram/evtx/releases/latest/download/evtx_dump-v0.11.2-aarch64-unknown-linux-gnu"
     else
-        wget -O "evtx_dump" "https://github.com/omerbenamram/evtx/releases/download/latest/evtx_dump-v0.11.2-x86_64-unknown-linux-gnu"
+        wget -O "evtx_dump" "https://github.com/omerbenamram/evtx/releases/latest/download/evtx_dump-v0.11.2-x86_64-unknown-linux-gnu"
     fi
     chmod +x "evtx_dump"
     cd - > /dev/null
