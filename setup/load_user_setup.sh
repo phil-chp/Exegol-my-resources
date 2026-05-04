@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+# set -e
 
 # This script will be executed on the first startup of each new container with the "my-resources" feature enabled.
 # Arbitrary code can be added in this file, in order to customize Exegol (dependency installation, configuration file copy, etc).
@@ -11,19 +11,27 @@ set -e
 ARCH=$(uname -m)
 MY_RES="/opt/my-resources"
 TOOLS_DIR="$MY_RES/tools"
+BLUE_DIR="$MY_RES/blue_tools"
 BIN_DIR="$MY_RES/bin"
 
-mkdir -p "$MY_RES/bin"
+mkdir -p "$BLUE_DIR"
+mkdir -p "$BIN_DIR"
+
 
 function log() {
-    # local start=$SECONDS
-    "$@" # 2>&1 >> "$MY_RES/setup_debug.log"
-    # local duration=$(( SECONDS - start ))
-    # echo "$(date '+%H:%M:%S') - $1 : ${duration}s" >> "$MY_RES/setup_benchmark.log"
+    "$@"
 }
+
+# function log() {
+#     local start=$SECONDS
+#     "$@" 2>&1 >> "$MY_RES/setup_debug.log"
+#     local duration=$(( SECONDS - start ))
+#     echo "$(date '+%H:%M:%S') - $1 : ${duration}s" >> "$MY_RES/setup_benchmark.log"
+# }
 
 # > "$MY_RES/setup_debug.log"
 # > "$MY_RES/setup_benchmark.log"
+
 
 # ============================================
 # setup
@@ -65,7 +73,16 @@ function add_nvim() {
     fi
 }
 
-log add_nvim
+
+function add_treesitter_cli() {
+    [ -f "$BIN_DIR/tree-sitter" ] && return
+
+    cargo install tree-sitter-cli --root "$TOOLS_DIR/tree-sitter"
+    if [ -f "$TOOLS_DIR/tree-sitter/bin/tree-sitter" ]; then
+        ln -sf "$TOOLS_DIR/tree-sitter/bin/tree-sitter" "$BIN_DIR/tree-sitter"
+    fi
+}
+
 
 # ============================================
 # tools
@@ -157,6 +174,7 @@ function add_joomlascan() {
     cd - > /dev/null
 }
 
+
 # =============================================
 # linux/windows
 
@@ -214,10 +232,42 @@ function add_chisel() {
     cd - > /dev/null
 }
 
+
+# ==============================================
+# blue_tools
+
+function add_evtx_dump() {
+    [ -f "$BLUE_DIR/evtx_dump" ] && return
+
+    cd "$BLUE_DIR"
+    if [ "$ARCH" = "aarch64" ]; then
+        wget -O "evtx_dump" "https://github.com/omerbenamram/evtx/releases/download/latest/evtx_dump-v0.11.2-aarch64-unknown-linux-gnu"
+    else
+        wget -O "evtx_dump" "https://github.com/omerbenamram/evtx/releases/download/latest/evtx_dump-v0.11.2-x86_64-unknown-linux-gnu"
+    fi
+    chmod +x "evtx_dump"
+    cd - > /dev/null
+}
+
+
+function add_analyzemft() {
+    [ -L "$BLUE_DIR/analyzeMFT" ] && [ -f "$BLUE_DIR/venv-analyzemft/bin/analyzemft" ] && return
+
+    python3 -m venv "$BLUE_DIR/venv-analyzemft"
+    "$BLUE_DIR/venv-analyzemft/bin/pip" install --upgrade pip
+    "$BLUE_DIR/venv-analyzemft/bin/pip" install analyzeMFT
+    ln -sf "$BLUE_DIR/venv-analyzemft/bin/analyzemft" "$BLUE_DIR/analyzeMFT"
+}
+
+
 # ============================================
 # call
 
-# build
+# setup
+log add_nvim
+log add_treesitter_cli
+
+# tools
 log add_winrmexec
 log add_dnscat2
 log add_wpprobe
@@ -225,7 +275,11 @@ log add_reconspider
 log add_flask_unsign
 log add_joomlascan
 
-# compilation
+# linux/windows
 log add_rcat
 log add_ptunnel_ng
 log add_chisel
+
+# blue_tools
+log add_evtx_dump
+log add_analyzemft

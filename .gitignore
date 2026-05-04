@@ -9,6 +9,8 @@
 **/*.pyc
 **/*.o
 /bin/*
+setup/nvim/
 setup/nvim-data/
 setup_*.log
 tools/nvim/
+blue_tools/

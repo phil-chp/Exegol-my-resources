@@ -15,7 +15,7 @@ alias winrmexec.py="$TOOLS_DIR/winrmexec/venv/bin/python3 $TOOLS_DIR/winrmexec/w
 alias winrmexec="grc winrmexec.py"
 
 # dnscat2
-alias dnscat2='BUNDLE_GEMFILE=/opt/my-resources/tools/dnscat2/server/Gemfile rvm default@dnscat2 do bundle exec ruby /opt/my-resources/tools/dnscat2/server/dnscat2.rb'
+alias dnscat2='BUNDLE_GEMFILE=$TOOLS_DIR/dnscat2/server/Gemfile rvm default@dnscat2 do bundle exec ruby $TOOLS_DIR/dnscat2/server/dnscat2.rb'
 # ReconSpider
 alias ReconSpider="$TOOLS_DIR/ReconSpider/venv/bin/python3 $TOOLS_DIR/ReconSpider/ReconSpider.py"
 
@@ -42,6 +42,9 @@ alias XXEinjector.rb="ruby $TOOLS_DIR/XXEinjector.rb"
 alias rs256-to-hs256="$TOOLS_DIR/rs256-to-hs256.sh"
 alias extract_email_from_pgp="python3 $TOOLS_DIR/extract_email_from_pgp.py"
 alias iis-shortname-scanner="$TOOLS_DIR/iis_shortname_scanner.sh"
+# =========================================
+alias evtx_dump="/opt/my-resources/blue_tools/evtx_dump"
+alias analyzeMFT="/opt/my-resources/blue_tools/analyzeMFT"
 # =========================================
 
 
