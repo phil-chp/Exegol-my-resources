@@ -3,6 +3,9 @@ alias c="printf '\e[2J\e[3J\e[H'"
 alias nvim="/opt/my-resources/bin/nvim"
 alias vi="nvim"
 
+alias gcc-win64="x86_64-w64-mingw32-gcc"
+alias gcc-win32="i686-w64-mingw32-gcc"
+
 # =========================================
 # Custom Tools
 
