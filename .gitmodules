@@ -45,3 +45,6 @@
 [submodule "tools/IIS-ShortName-Scanner"]
 	path = tools/IIS-ShortName-Scanner
 	url = https://github.com/irsdl/IIS-ShortName-Scanner
+[submodule "bypass/ligolo-ng"]
+	path = bypass/ligolo-ng
+	url = https://github.com/nicocha30/ligolo-ng.git
